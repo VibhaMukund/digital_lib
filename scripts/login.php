@@ -17,8 +17,7 @@ else{
     if($stmt_result->num_rows>0){
         $data = $stmt_result->fetch_assoc();
         if($data['pass'] == $pass){
-            echo "Welecome Back....Click here to go to Profile Page";
-            echo '<a href="/digital%20library/html/profile.html">Click here</a>';
+            
         }else{
             echo "Invalid Email or password";
         }

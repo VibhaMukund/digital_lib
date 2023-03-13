@@ -15,7 +15,7 @@ function myFunction() {
   cache: false,
   success: function(html) {
 
-    window.location.href = "/digital%20library/html/create_profile.html";
+    window.location.href = "/digital%20library/html/update_profile.html";
   }
   });
   }

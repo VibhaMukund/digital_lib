@@ -15,12 +15,12 @@ function myFunction() {
     // AJAX code to submit form.
     $.ajax({
     type: "POST",
-    url: "../scripts/registration.php",
+    url: "../scripts/create_profile.php",
     data: dataString,
     cache: false,
     success: function(html) {
   
-      window.location.href = "/digital%20library/html/create_profile.html";
+      window.location.href = "/digital%20library/html/login.html";
     }
     });
     }

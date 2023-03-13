@@ -30,8 +30,6 @@ if ($conn->connect_error) {
         $stmt = $conn->prepare($Insert);
         $stmt->bind_param("ssi", $username, $email, $pass);
         if ($stmt->execute()) {
-            echo "New record inserted sucessfully.";
-            echo '<a href="/digital%20library/html/create_profile.html">Click here</a>';
         } else {
             echo $stmt->error;
         }

@@ -1,22 +1,25 @@
-$(document).ready(function () {
-    $("form").submit(function (event) {
-      var formData = {
-        username: $("#username").val(),
-        email: $("#email").val(),
-        pass: $("#pass").val(),
-      };
-  
-      $.ajax({
-        type: "POST",
-        url: "registration.php",
-        data: formData,
-        dataType: "json",
-        encode: true,
-      }).done(function (data) {
-        console.log(data);
-        window.location.href = "/digital%20library/html/create_profile.html";
-      });
-  
-      event.preventDefault();
-    });
+
+function myFunction() {
+  var username = document.getElementById("username").value;
+  var email = document.getElementById("email").value;
+  var pass = document.getElementById("pass").value;
+  // Returns successful data submission message when the entered information is stored in database.
+  var dataString = 'username=' + username + '&email=' + email + '&pass=' + pass ;
+  if (username == '' || email == '' || pass == '' ) {
+  alert("Please Fill All Fields");
+  } else {
+  // AJAX code to submit form.
+  $.ajax({
+  type: "POST",
+  url: "../scripts/registration.php",
+  data: dataString,
+  cache: false,
+  success: function(html) {
+
+    window.location.href = "/digital%20library/html/create_profile.html";
+  }
   });
+  }
+  return false;
+  }
+  
